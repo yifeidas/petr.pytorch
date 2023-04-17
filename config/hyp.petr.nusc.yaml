@@ -1,0 +1,25 @@
+width: 1024  #input image width
+height: 512 #input image height
+backbone: yolo-m  # backbone
+pretrain: False
+num_classes: 10
+lr0: 0.005  # initial learning rate (SGD=1E-2, Adam=1E-3) total batch=64
+lrdecay: 0.1
+scheduler: lamda # use step lr scheduler, step or lamda
+lrf: 0.05
+# steps: [9, 11]
+maxepoch: 12 # final epoch
+momentum: 0.9   # SGD momentum/Adam beta1
+weight_decay: 0.01 # optimizer weight decay 1e-4
+warmup_epochs: 1.0  # warmup epochs (fractions ok)
+warmup_momentum: 0.8  # warmup initial momentum
+warmup_bias_lr: 0.1  # warmup initial bias lr
+xbound: [-61.2, 61.2, 0.4]
+ybound: [-61.2, 61.2, 0.4]
+zbound: [-10.0, 10.0, 0.4]
+aux_loss: True
+bev_aug: True
+bev_rot: [-22.5, 22.5]
+random_resize: False
+w_cls: 2.0
+w_box: 0.25
